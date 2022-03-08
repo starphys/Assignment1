@@ -46,18 +46,13 @@ public class Card {
         //TODO: extract suit from suitRank
         //Last digit is always suit, so compare here and return in words
         String suit = suitRank.substring(suitRank.length()-1);
-        switch(suit) {
-            case "D":
-                return "Diamonds";
-            case "H":
-                return "Hearts";
-            case "S":
-                return "Spades";
-            case "C":
-                return "Clubs";
-            default:
-                return UNKNOWN;
-        }
+        return switch (suit) {
+            case "D" -> "Diamonds";
+            case "H" -> "Hearts";
+            case "S" -> "Spades";
+            case "C" -> "Clubs";
+            default -> UNKNOWN;
+        };
     }
 
     private String getRank() {
@@ -65,37 +60,22 @@ public class Card {
         //TODO: extract rank from suitRank
         //First digit or two is rank, so check validity and return in words
         String rank = suitRank.substring(0,suitRank.length()-1);
-        switch(rank) {
-            case "A":
-                return "Ace";
-            case "1":
-                return "One";
-            case "2":
-                return "Two";
-            case "3":
-                return "Three";
-            case "4":
-                return "Four";
-            case "5":
-                return "Five";
-            case "6":
-                return "Six";
-            case "7":
-                return "Seven";
-            case "8":
-                return "Eight";
-            case "9":
-                return "Nine";
-            case "10":
-                return "Ten";
-            case "J":
-                return "Jack";
-            case "Q":
-                return "Queen";
-            case "K":
-                return "King";
-            default:
-                return UNKNOWN;
-        }
+        return switch (rank) {
+            case "A" -> "Ace";
+            case "1" -> "One";
+            case "2" -> "Two";
+            case "3" -> "Three";
+            case "4" -> "Four";
+            case "5" -> "Five";
+            case "6" -> "Six";
+            case "7" -> "Seven";
+            case "8" -> "Eight";
+            case "9" -> "Nine";
+            case "10" -> "Ten";
+            case "J" -> "Jack";
+            case "Q" -> "Queen";
+            case "K" -> "King";
+            default -> UNKNOWN;
+        };
     }
 }
